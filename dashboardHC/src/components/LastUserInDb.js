@@ -10,11 +10,9 @@ class LastUserInDb extends React.Component{
         }
     }
     componentDidMount(){
-        console.log("hola")
         fetch(API_USERS)
             .then(res => res.json())
             .then(data => {
-            console.log(data)
                 this.setState({
                     users:data.data.data   
                 })
@@ -23,7 +21,6 @@ class LastUserInDb extends React.Component{
     render(){
         const {users} = this.state
         const lastUser = users[users.length-1]
-        // console.log(lastUser)
         return(
             
             <div className="col-lg-6 mb-4">
