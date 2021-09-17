@@ -22,6 +22,10 @@ componentDidMount(){
 }
   render(){
     const {products} = this.state
+    var aux={};
+    const filtrados = products.filter(filtrar=>aux[filtrar.category.info] ? false : aux[filtrar.category.info] = true);
+
+  
     return (
       <div className="col-lg-6 mb-4">
         <div className="card shadow mb-4">
@@ -30,7 +34,7 @@ componentDidMount(){
               Categorías en la base de datos
             </h5>
           </div>
-          {products.map(product=>{
+           {filtrados.map(product=>{
             return(
               <div className="card-body">
                   <div className="row">
@@ -43,6 +47,7 @@ componentDidMount(){
               </div>
             )
           })}
+      
         </div>
       </div>
     )

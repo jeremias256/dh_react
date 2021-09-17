@@ -1,6 +1,6 @@
 import React from 'react';
 import ChartRow from './ChartRow';
-import { API_PRODUCTS } from '../config';
+import { API_PRODUCTS } from './../config';
 
 class Chart extends React.Component{
     constructor(props){

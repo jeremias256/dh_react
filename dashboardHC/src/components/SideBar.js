@@ -3,7 +3,7 @@ import image from '../assets/images/logo.png';
 import ContentWrapper from './ContentWrapper';
 import CategoriesInDb from './CategoriesInDb';
 import LastUserInDb from './LastUserInDb';
-import ContentRowProducts from './ContentRowProducts';
+import ContentRowTotals from './ContentRowTotals';
 import NotFound from './NotFound';
 import {Link, Route, Switch} from 'react-router-dom';
 
@@ -54,7 +54,7 @@ function SideBar(){
 
                 {/*<!-- Nav Item - Tables -->*/}
                 <li className="nav-item nav-link">
-                <Link className="nav-link" to="/ContentRowProducts">
+                <Link className="nav-link" to="/ContentRowTotals">
                         <i className="fas fa-fw fa-table"></i>
                         <span>Panel de totales</span></Link>
                 </li>
@@ -73,8 +73,8 @@ function SideBar(){
                 <Route path="/LastUserInDb">
                     <LastUserInDb />
                 </Route>
-                <Route path="/ContentRowProducts">
-                    <ContentRowProducts />
+                <Route path="/ContentRowTotals">
+                    <ContentRowTotals />
                 </Route>
                 <Route component={NotFound} />
             </Switch>

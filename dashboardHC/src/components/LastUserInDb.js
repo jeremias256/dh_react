@@ -31,6 +31,8 @@ class LastUserInDb extends React.Component{
                 <div className="card shadow mb-4">
                     <div className="card-header py-3">
                         <h5 className="m-0 font-weight-bold text-gray-800">Ultimo usuario registrado : {lastUser && lastUser.name}</h5>
+                        <h5 className="m-0 font-weight-bold text-gray-800">Apellido : {lastUser && lastUser.last_name}</h5>
+                        <h5 className="m-0 font-weight-bold text-gray-800">email : {lastUser && lastUser.email}</h5>
                     </div>
                     <div className="card-body">
                         <div className="text-center">
