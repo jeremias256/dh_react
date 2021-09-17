@@ -7,7 +7,7 @@ class ContentRowTotals extends React.Component{
         super(props);
         
         this.state = {
-            products: 0,
+            products: [],
             users:0,           
         }
     }
@@ -23,7 +23,6 @@ class ContentRowTotals extends React.Component{
         fetch(API_USERS)
              .then(res => res.json())
              .then(data => {
-                 //console.log(data)
                  this.setState({
                      users:data.data.data   
                  })
@@ -33,25 +32,25 @@ class ContentRowTotals extends React.Component{
     render(){
         const {products} = this.state
         const {users} = this.state
+        var aux={};
+        const filtrados = products.filter(filtrar=>aux[filtrar.category.info] ? false : aux[filtrar.category.info] = true);
         
-        // var aux={};
-        // const filtrados = products.filter(filtrar=>aux[filtrar.category.info] ? false : aux[filtrar.category.info] = true)
-
+        
         const productsQuantity = {
-            title:"Productos totales",
+            title:"Productos disponibles",
             quantity:products.length,
             color:"primary",
             icon:"fas fa-laptop"
         }
         const usersQuantity = {
-            title:"Usuarios totales",
+            title:"Usuarios registrados",
             quantity:users.length,
             color:'success',
             icon:"fas fa-users"
         }
         const categoriesQuantity = {
-            title:"Categorias totales",
-            quantity:8,
+            title:"Categorias en stock",
+            quantity:filtrados.length,
             color:'warning',
             icon:"fas fa-list"
         }

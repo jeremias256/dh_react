@@ -1,8 +1,8 @@
 import React from 'react';
-import ChartRow from './ChartRow';
-import { API_PRODUCTS } from './../config';
+import ChartRowProducts from './ChartRowProducts';
+import { API_PRODUCTS } from '../config';
 
-class Chart extends React.Component{
+class ChartProducts extends React.Component{
     constructor(props){
         super(props);
         
@@ -26,6 +26,7 @@ class Chart extends React.Component{
         return (
             
             <div className="card shadow mb-4">
+                <h1>Productos disponibles en la base de datos</h1>
                 <div className="card-body">
                     <div className="table-responsive">
                         <table className="table table-bordered" id="dataTable" width="100%" cellSpacing="0">
@@ -36,6 +37,7 @@ class Chart extends React.Component{
                                     <th>Quota</th>
                                     <th>Stock</th>
                                     <th>product_description</th>
+                                    <th>Category</th>
                                 </tr>
                             </thead>
                             <tfoot>
@@ -44,13 +46,14 @@ class Chart extends React.Component{
                                     <th>Price</th>
                                     <th>Quota</th>
                                     <th>Stock</th>
-                                    <th>Productdescription</th>
+                                    <th>Product description</th>
+                                    <th>Category</th>
                                 </tr>
                             </tfoot>
                             <tbody>
                                 {
                                     products.map( ( row , i) => {
-                                        return <ChartRow { ...row} key={i}/>
+                                        return <ChartRowProducts { ...row} key={i}/>
                                     })
                                 }
                             </tbody>
@@ -62,4 +65,4 @@ class Chart extends React.Component{
     }   
 }
 
-export default Chart;
+export default ChartProducts;
